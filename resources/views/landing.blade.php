@@ -8,7 +8,7 @@
                     <h2 class="part-1">Citizens Assistance Recording and </h2>
                     <h2- class="part-2"> Listing Organization (CARLO)</h2>
                 </label><br>
-                <label class="sub-headline text-white text-center">Helping by Ka Iking</label>
+                <!-- <label class="sub-headline text-white text-center">Helping by Ka Iking</label> -->
                 <label class="sub-headline-1 text-center lh-lg">
                     Kailangan mo tulong. Pindutin mo ako. Nandyan ako sa tabi mo.
                     <br>
