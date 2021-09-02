@@ -6,7 +6,7 @@
             <div class="d-flex flex-column">
                 <label class="headline">
                     <h2 class="part-1">Citizens Assistance Recording and </h2>
-                    <h2- class="part-2"> Listing Organization (CARLO)</h2>
+                    <h2- class="part-2"> <center>Listing Organization</center></h2>
                 </label><br>
                 <!-- <label class="sub-headline text-white text-center">Helping by Ka Iking</label> -->
                 <label class="sub-headline-1 text-center lh-lg">
