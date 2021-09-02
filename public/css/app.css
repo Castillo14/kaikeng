@@ -17,12 +17,12 @@ body {
 }
 
 .part-1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
 .part-2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
@@ -35,23 +35,15 @@ body {
 }
 
 .sub-headline-1 {
-  font-size: 1.3rem;
+  font-size: 14px;
   text-shadow: -1px 1px 3px black;
-  color: #dadada !important;
+  color: #110303 !important;
 }
 
 .sub-headline-2 {
-  font-size: 1.3rem;
+  font-size: 14px;
   text-shadow: -1px 1px 3px black;
-  color: #dadada !important;
-  font-family: cursive;
-}
-
-.sub-headline-1,
-.sub-headline-2 {
-  font-size: 16px;
-  text-shadow: -5px 3px 3px #000;
-  color: #e9ecef !important;
+  color: #110303 !important;
 }
 
 .pindutin {
@@ -2971,8 +2963,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-light {
-  color: #212529;
-  background-color: #f8f9fa;
+  color: #f8fafc;
+  background-color: #0a2139;
   border-color: #f8f9fa;
 }
 
@@ -8433,7 +8425,7 @@ button.bg-dark:focus {
 }
 
 .vh-100 {
-  height: 75vh !important;
+  height: 100vh !important;
 }
 
 .m-0 {
@@ -11007,6 +10999,6 @@ a.text-dark:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 6.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
