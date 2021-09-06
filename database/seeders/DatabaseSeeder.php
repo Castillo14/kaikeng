@@ -26,11 +26,5 @@ class DatabaseSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->remember_token = Str::random(10);
         $user->save();
-
-        $user_province =  new UserProvince();
-        $user_province->user_id = $user->id;
-        $user_province->province = 'marinduque';
-        $user_province->position = 'admin';
-        $user_province->save();
     }
 }

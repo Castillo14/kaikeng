@@ -52,8 +52,9 @@
 </nav>
 <!-- Masthead-->
 @yield('content')
+
 <footer>
-    <div class="d-flex pb-4">
+    <div class="d-flex d-flex pb-2 pt-5">
         <div class="ps-3 text-white d-flex flex-row">
             <i class="fas fa-share-alt fs-1 me-4"></i>
             <span class="align-self-center">Share Ka Iking HELPING</span>
