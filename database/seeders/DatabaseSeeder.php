@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\UserProvince;
 use Illuminate\Database\Seeder;
 use DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,9 +21,9 @@ class DatabaseSeeder extends Seeder
     {
         $user = new User();
         $user->name = 'Admin';
-        $user->email = 'admin@tabanguly.com';
+        $user->email = 'admin@site.com';
         $user->email_verified_at = now();
-        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+        $user->password = Hash::make('password');
         $user->remember_token = Str::random(10);
         $user->save();
 

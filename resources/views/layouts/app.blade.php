@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/vendors/css/vendor.bundle.base.css') }}">
     <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/css/style.css') }}">
     <!-- Font Awesome icons (free version)-->

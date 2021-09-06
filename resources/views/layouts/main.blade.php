@@ -38,8 +38,15 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-top: -60px !important;">
         <ul class="navbar-nav ml-auto text-white">
-            <div class="mr-4">What is Ka-Iking HELPING?</div>
-            <div class="mr-4">Term Of Use</div>
+            <div class="mr-4">
+                <a href="#" class="btn btn-link text-white font-weight-bold">APPLY</a>
+            </div>
+            <div class="mr-4">
+                <a href="#" class="btn btn-link text-white font-weight-bold">What is Ka-Iking HELPING?</a>
+            </div>
+            <div class="mr-4">
+                <a href="#" class="btn btn-link text-white font-weight-bold">Term Of Use</a>
+            </div>
         </ul>
     </div>
 </nav>

@@ -14,13 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PublicController::class, 'pageLanding'])->name('landing');
-
 Route::get('/form', [\App\Http\Controllers\PublicController::class, 'pageForm'])->name('form');
 Route::post('/form/send', [\App\Http\Controllers\PublicController::class, 'sendForm'])->name('form.send');
-
-Route::get('du30', '\App\Http\Controllers\Auth\LoginController@showLoginForm');
-
-Route::get('login', fn() => redirect()->route('landing'));
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 

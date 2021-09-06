@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Models\UserProvince;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
