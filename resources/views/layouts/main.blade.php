@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-top: -60px !important;">
         <ul class="navbar-nav ml-auto text-white">
             <div class="mr-4">
-                <a href="#" class="btn btn-link text-white font-weight-bold">APPLY</a>
+                <a href="{{ route('form') }}" class="btn btn-link text-white font-weight-bold">APPLY</a>
             </div>
             <div class="mr-4">
                 <a href="#" class="btn btn-link text-white font-weight-bold">What is Ka-Iking HELPING?</a>

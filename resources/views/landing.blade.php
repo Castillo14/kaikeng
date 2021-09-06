@@ -4,10 +4,11 @@
     <header class="masthead">
         <div class="container d-flex vh-100 justify-content-center">
             <div class="d-flex flex-column">
-                <label class="headline">
-                    <h2 class="part-1">Citizens Assistance Recording and </h2>
-                    <h2- class="part-2"> <center>Listing Organization</center></h2>
-                </label><br>
+                <div class="headline d-flex flex-column">
+                    <h1 class="part-1">Citizens Assistance Recording and </h1>
+                    <h1 class="part-2"> Listing Organization</h1>
+                </div>
+                <br>
                 <!-- <label class="sub-headline text-white text-center">Helping by Ka Iking</label> -->
                 <label class="sub-headline-1 text-center lh-lg">
                     Kailangan mo tulong. Pindutin mo ako. Nandyan ako sa tabi mo.

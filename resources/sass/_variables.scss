@@ -19,7 +19,7 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
 body {
-    background-image: url("../assets/BG.png");
+    background-image: url("../assets/CARLO.png");
     background-size: 100% 100%;
 }
 
@@ -28,19 +28,19 @@ body {
 }
 
 .headline {
-    color: #171615;
-    text-shadow: -1px 0px 6px #fff;
+    color: #FFFDFE;
+    text-shadow: -1px 0px 6px #000;
     font-family: initial;
     text-align: -webkit-center;
 }
 
 .part-1 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bolder;
 }
 
 .part-2 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bolder;
 }
 
@@ -55,15 +55,20 @@ body {
 .sub-headline-1 {
     font-size: 14px;
     text-shadow: -1px 1px 3px black;
-    color:#110303 !important;
+    color: #fffdfe !important;
 }
 
 .sub-headline-2 {
     font-size: 14px;
     text-shadow: -1px 1px 3px black;
-    color: #110303 !important;
+    color: #fffdfe !important;
 }
 
 .pindutin {
     margin-top: 96px;
+}
+
+.pindutin a {
+    border-color: black !important;
+    border: 1 !important;
 }
