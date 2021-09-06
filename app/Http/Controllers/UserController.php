@@ -25,10 +25,7 @@ class UserController extends Controller
                       'users.name',
                       'users.email',
                       'users.id',
-                      'user_provinces.province',
-                      'user_provinces.position',
-                  ])
-                  ->join('user_provinces', 'user_provinces.user_id', '=', 'users.id');
+                  ]);
 
         return DataTables::of($user)->make(true);
     }
@@ -45,11 +42,7 @@ class UserController extends Controller
                       'users.name',
                       'users.email',
                       'users.id',
-                      'user_provinces.id as up_id',
-                      'user_provinces.province',
-                      'user_provinces.position',
                   ])
-                  ->join('user_provinces', 'user_provinces.user_id', '=', 'users.id')
                   ->where('users.id', $id)
                   ->get()[0];
 
@@ -64,12 +57,6 @@ class UserController extends Controller
         $user->email    = $data['email'];
         $user->password = Hash::make($data['password']);
         $user->save();
-
-        $user_province           = new UserProvince();
-        $user_province->user_id  = $user->id;
-        $user_province->province = $data['province'];
-        $user_province->position = $data['position'];
-        $user_province->save();
 
         Alert::success('Success!', 'Account Registered!');
 
@@ -89,12 +76,6 @@ class UserController extends Controller
 
         $user->save();
 
-        $user_province           = UserProvince::find($data['up_id']);
-        $user_province->user_id  = $user->id;
-        $user_province->province = $data['province'];
-        $user_province->position = $data['position'];
-        $user_province->save();
-
         Alert::success('Success!', 'Account Updated!');
 
         return redirect()->route('users');
@@ -103,7 +84,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        UserProvince::query()->where('user_id', $id)->delete();
 
         Alert::success('Success!', 'Account Deleted!');
 

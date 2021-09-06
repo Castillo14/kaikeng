@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-5 grid-margin stretch-card">
@@ -22,7 +21,6 @@
                                     </span>
                                     @enderror
                                 </div>
-
                                 <div class="form-group row">
                                     <label for="email">{{ __('E-Mail Address') }}</label>
                                     <input id="email" type="email"
@@ -46,35 +44,20 @@
                                     </span>
                                     @enderror
                                 </div>
-
                                 <div class="form-group row">
                                     <label for="password-confirm">{{ __('Confirm Password') }}</label>
                                     <input id="password-confirm" type="password" class="form-control"
                                            name="password_confirmation" required autocomplete="new-password">
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="password-confirm">{{ __('Province') }}</label>
-                                    <select name="province" class="form-control">
-                                        <option value="marinduque" selected>Marinduque</option>
-                                        <option value="marikina">Marikina</option>
-                                        <option value="cagayan de oro">Cagayan Province</option>
-                                        <option value="isabela province">Isabela Province</option>
-                                    </select>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password-confirm">{{ __('Position') }}</label>
-                                    <select name="position" class="form-control">
-                                        <option value="user" selected>User</option>
-                                        <option value="admin">Admin</option>
-                                    </select>
+                                    @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group row mb-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Register') }}
-                                        </button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -83,15 +66,6 @@
             </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-            <div class="container-fluid clearfix">
-                <span
-                    class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Yaramay 2020</span>
-            </div>
-        </footer>
-        <!-- partial -->
-    </div>
 @endsection
 
 @section('scripts')

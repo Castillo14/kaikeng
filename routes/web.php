@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/home/table', [App\Http\Controllers\HomeController::class, 'table'])->name('home.table');
     Route::get('/home/preview/{id}', [App\Http\Controllers\HomeController::class, 'preview'])->name('home.preview');
 
-    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users')->middleware('can:admin');
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
     Route::post('/users/table', [App\Http\Controllers\UserController::class, 'table'])->name('users.table');
     Route::post('/users/register', [App\Http\Controllers\UserController::class, 'register'])->name('users.register');
     Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');

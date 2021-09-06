@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-5 grid-margin stretch-card">
@@ -11,7 +10,6 @@
                             <p class="card-description">User Registration</p>
                             <form method="POST" action="{{ route('users.update') }}">
                                 @csrf
-                                <input name="up_id" value="{{ $user->up_id }}" type="text" hidden>
                                 <input name="id" value="{{ $user->id }}" type="text" hidden>
                                 <div class="form-group row">
                                     <label for="name">{{ __('Name') }}</label>
@@ -56,42 +54,10 @@
                                            name="password_confirmation" required autocomplete="new-password"
                                            value="fakepassword">
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="password-confirm">{{ __('Province') }}</label>
-                                    <select name="province" class="form-control">
-                                        <option
-                                            {{ $user->province != 'marinduque' ? '' : 'selected' }} value="marinduque"
-                                            checked>Marinduque
-                                        </option>
-                                        <option {{ $user->province != 'marikina' ?'': 'selected' }} value="marikina">
-                                            Marikina
-                                        </option>
-                                        <option
-                                            {{ $user->province != 'cagayan province' ?'': 'selected' }} value="cagayan province">
-                                            Cagayan Province
-                                        </option>
-                                        <option
-                                            value="isabela province" {{ $data->province != 'isabela province' ?'': 'selected' }}>
-                                            Isabela Province
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password-confirm">{{ __('Position') }}</label>
-                                    <select name="position" class="form-control">
-                                        <option value="admin" {{ $user->position != 'admin' ?'': 'selected' }}>
-                                            Admin
-                                        </option>
-                                        <option value="user" {{ $user->position != 'user' ?'': 'selected' }}>
-                                            User
-                                        </option>
-                                    </select>
-                                </div>
                                 <div class="form-group row mb-0">
-                                    <div class="col-md-12 offset-md-2">
+                                    <div class="d-flex flex-row">
                                         <a href="{{ route('users') }}"
-                                           class="btn btn-default">
+                                           class="btn btn-secondary">
                                             {{ __('Cancel') }}
                                         </a>
                                         <button type="submit" class="btn btn-primary">
@@ -109,16 +75,6 @@
                 </div>
             </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-            <div class="container-fluid clearfix">
-                <span
-                    class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Yaramay 2020</span>
-            </div>
-        </footer>
-        <!-- partial -->
-    </div>
 @endsection
 
 @section('scripts')

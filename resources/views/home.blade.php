@@ -1,35 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="main-panel">
-        <div class="content-wrapper">
-            <div class="row">
-                <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Overview</h4>
-                            <p class="card-description"> Help Requests </p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <table id="tbl-help-request" class="table table-bordered display nowrap"
-                                           style="width:100%">
-                                    </table>
-                                </div>
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Overview</h4>
+                        <p class="card-description"> Help Requests </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tbl-help-request" class="table table-bordered display nowrap"
+                                       style="width:100%">
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-            <div class="container-fluid clearfix">
-                <span
-                    class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Yaramay 2020</span>
-            </div>
-        </footer>
-        <!-- partial -->
     </div>
 @endsection
 

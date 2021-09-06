@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-12 grid-margin stretch-card">
@@ -24,16 +23,6 @@
                 </div>
             </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-            <div class="container-fluid clearfix">
-                <span
-                    class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Yaramay 2020</span>
-            </div>
-        </footer>
-        <!-- partial -->
-    </div>
 @endsection
 
 @section('scripts')
@@ -59,35 +48,8 @@
                                 '<i class="fas fa-edit"></i> '+value.name+'</a>'
                         }, name: 'name', title: 'Name'},
                     {data: 'email', name: 'email', title: 'E-mail'},
-                    {data: 'position', name: 'position', title: 'Position'},
-                    {data: 'province', name: 'province', title: 'Province'},
                 ],
                 drawCallback() {
-                    // $('.btn-show-more').click(function () {
-                    //     $this.full_details = $this.dt.row($(this).parents('tr')).data();
-                    //     $('#mdl-overview').modal('show');
-                    // });
-
-                    {{--$('.btn-delete-info').click(function () {--}}
-                    {{--    $this.full_details = $this.dt.row($(this).parents('tr')).data();--}}
-                    {{--    Swal.fire({--}}
-                    {{--        title: 'Do you want to delete this?',--}}
-                    {{--        showCancelButton: true,--}}
-                    {{--        confirmButtonText: `Delete`,--}}
-                    {{--    }).then((result) => {--}}
-                    {{--        if (result.isConfirmed) {--}}
-                    {{--            $.ajax({--}}
-                    {{--                url: '{{ route('dashboard.destroy') }}',--}}
-                    {{--                method: 'POST',--}}
-                    {{--                data: $this.full_details,--}}
-                    {{--                success(value) {--}}
-                    {{--                    Swal.fire('Deleted!', '', 'success')--}}
-                    {{--                    $this.dt.draw()--}}
-                    {{--                }--}}
-                    {{--            });--}}
-                    {{--        }--}}
-                    {{--    })--}}
-                    {{--});--}}
                 }
             });
         });
