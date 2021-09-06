@@ -22,7 +22,7 @@
                 </label>
                 <div class="d-flex justify-content-center pindutin">
                     <a class="btn btn-light rounded-pill fw-bolder py-3 px-5 fs-6 shadow" href="{{ route('form') }}">
-                        Pindutin Para Sa Tulong</a>
+                        Pindutin Para Mag APPLY</a>
                 </div>
             </div>
         </div>
