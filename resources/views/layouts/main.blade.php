@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:url"                content="{{ route('landing') }}" />
@@ -8,14 +12,6 @@
     <meta property="og:title"              content="{{ config('app.name', 'Laravel') }}" />
     <meta property="og:description"        content="" />
     <meta property="og:image"              content="{{ asset('images/CARLO.png') }}" />
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- logo -->
-    <link rel="icon" type="image/x-icon" href="/theme/grayscale/assets/img/favicon.ico"/>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -25,19 +21,20 @@
 
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="navbar-brand js-scroll-trigger d-flex flex-column">
         <span class="text-white">Visit and like us on</span>
-        <div class="text-center"><img src="{{ asset('img/facebook.png') }}" width="40%"></div>
+        <div class="text-center">
+            <img src="{{ asset('img/facebook.png') }}" class="img-fluid" width="40%">
+        </div>
     </div>
     <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-top: -60px !important;">
         <ul class="navbar-nav ml-auto text-white">
