@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Faker\Factory;
+use App\Models\Agency;
 use App\Models\HelpRequest;
 use Illuminate\Http\Request;
 use Alert;
+use App\Mail\AssistanceMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\PublicRequest;
 
@@ -27,6 +30,10 @@ class PublicController extends Controller
             "description" => $request->description,
         ]);
 
+        HelpRequest::where('id', $help_request->id)->update([
+            "code" => Factory::create()->randomKey . $help_request->id,
+        ]);
+
         //        Mail::send([], [], function ($message) use ($request) {
         //            $message->to(['iseneres@yahoo.com', 'sab_princes@yahoo.com'])
         //                    ->from('do-not-reply@kaikenghelp-ph.com')
@@ -36,6 +43,9 @@ class PublicController extends Controller
         //                               Other Contact No.: {$request->contact_no_other}<br>
         //                               Salaysay.:<br>{$request->salaysay}<br>");
         //        });
+
+        Mail::to([$help_request->email])->send(new AssistanceMail($help_request));
+
         Alert::success('Success!', 'Form Received!');
 
         return redirect()->back();
@@ -43,6 +53,8 @@ class PublicController extends Controller
 
     public function pageForm()
     {
-        return view('form');
+        $agencies = Agency::all();
+
+        return view('form', compact('agencies'));
     }
 }

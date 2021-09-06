@@ -24,12 +24,12 @@ class PublicRequest extends FormRequest
     public function rules()
     {
         return [
-            "agency_id"   => "",
-            "name"        => "",
-            "email"       => "email",
-            "baranggay"   => "",
-            "city"        => "",
-            "description" => "",
+            "agency_id" => "required",
+            //            "name"        => "",
+            //            "email"       => "email",
+            //            "baranggay"   => "",
+            //            "city"        => "",
+            //            "description" => "",
         ];
     }
 }

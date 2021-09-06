@@ -26,11 +26,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/home/table', [App\Http\Controllers\HomeController::class, 'table'])->name('home.table');
     Route::get('/home/preview/{id}', [App\Http\Controllers\HomeController::class, 'preview'])->name('home.preview');
 
+    Route::get('/agencies', [App\Http\Controllers\AgencyController::class, 'index'])->name('agencies');
+    Route::post('/agency/store', [App\Http\Controllers\AgencyController::class, 'store'])->name('agency.store');
+    Route::get('/a/d/{id}', [App\Http\Controllers\AgencyController::class, 'destroy'])->name('agency.destroy');
+
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
     Route::post('/users/table', [App\Http\Controllers\UserController::class, 'table'])->name('users.table');
     Route::post('/users/register', [App\Http\Controllers\UserController::class, 'register'])->name('users.register');
     Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
-
     Route::get('/users/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
     Route::post('/users/update', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
     Route::get('/users/destroy/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');

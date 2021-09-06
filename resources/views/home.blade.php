@@ -46,36 +46,12 @@
                                 '<i class="fa fa-eye"></i> ' + value.id + '</a>'
                         }, name: 'id', title: 'ID'
                     },
-                    {data: 'fullname', name: 'fullname', title: 'Fullname'},
-                    {data: 'province', name: 'province', title: 'Province'},
+                    {data: 'name', name: 'name', title: 'Full Name'},
+                    {data: 'agency.name', name: 'agency.name', title: 'Agency'},
                     {data: 'created_at', name: 'created_at', title: 'Created at'},
                 ],
                 drawCallback() {
-                    // $('.btn-show-more').click(function () {
-                    //     $this.full_details = $this.dt.row($(this).parents('tr')).data();
-                    //     $('#mdl-overview').modal('show');
-                    // });
 
-                    {{--$('.btn-delete-info').click(function () {--}}
-                    {{--    $this.full_details = $this.dt.row($(this).parents('tr')).data();--}}
-                    {{--    Swal.fire({--}}
-                    {{--        title: 'Do you want to delete this?',--}}
-                    {{--        showCancelButton: true,--}}
-                    {{--        confirmButtonText: `Delete`,--}}
-                    {{--    }).then((result) => {--}}
-                    {{--        if (result.isConfirmed) {--}}
-                    {{--            $.ajax({--}}
-                    {{--                url: '{{ route('dashboard.destroy') }}',--}}
-                    {{--                method: 'POST',--}}
-                    {{--                data: $this.full_details,--}}
-                    {{--                success(value) {--}}
-                    {{--                    Swal.fire('Deleted!', '', 'success')--}}
-                    {{--                    $this.dt.draw()--}}
-                    {{--                }--}}
-                    {{--            });--}}
-                    {{--        }--}}
-                    {{--    })--}}
-                    {{--});--}}
                 }
             });
         });

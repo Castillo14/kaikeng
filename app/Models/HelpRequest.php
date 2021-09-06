@@ -17,6 +17,14 @@ class HelpRequest extends Model
         'baranggay',
         'city',
         'description',
+        'code',
         'status',
     ];
+
+    protected $with = ['agency'];
+
+    public function agency()
+    {
+        return $this->hasOne(Agency::class, 'id', 'agency_id');
+    }
 }

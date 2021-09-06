@@ -21,6 +21,7 @@ class CreateHelpRequestsTable extends Migration
             $table->string('baranggay')->nullable();
             $table->string('city')->nullable();
             $table->text('description')->nullable();
+            $table->text('code')->nullable();
             $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();

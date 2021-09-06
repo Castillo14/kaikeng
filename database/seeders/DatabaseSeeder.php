@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Faker\Factory;
 use App\Models\User;
+use App\Models\Agency;
 use Illuminate\Support\Str;
 use App\Models\UserProvince;
 use Illuminate\Database\Seeder;
@@ -26,5 +27,7 @@ class DatabaseSeeder extends Seeder
         $user->password = Hash::make('password');
         $user->remember_token = Str::random(10);
         $user->save();
+
+        Agency::factory()->count(10)->create();
     }
 }

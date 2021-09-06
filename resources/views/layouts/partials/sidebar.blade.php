@@ -7,6 +7,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('agencies') }}">
+                <span class="menu-title">Agencies</span>
+                <i class="mdi mdi-office-building menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('users') }}">
                 <span class="menu-title">Accounts</span>
                 <i class="mdi mdi-account menu-icon"></i>

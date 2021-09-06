@@ -8,11 +8,6 @@ use Yajra\DataTables\DataTables;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,8 +25,8 @@ class HomeController extends Controller
 
     public function preview($id)
     {
-        $data = HelpRequest::find($id);
+        $results = HelpRequest::find($id);
 
-        return view('form_preview', compact('data'));
+        return view('form_preview', compact('results'));
     }
 }

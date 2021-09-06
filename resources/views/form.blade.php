@@ -28,8 +28,14 @@
                         <div class="col-md-4 col-sm-12 mt-2">
                             <label>Agency / <i>Ahensiya</i></label>
                             <select name="agency_id" class="form-select">
-                                <option value=""> -- Select Options -- </option>
+                                <option value=""> -- Select Options --</option>
+                                @foreach($agencies as $agency)
+                                    <option value="{{ $agency->id }}">{{ $agency->name }}</option>
+                                @endforeach
                             </select>
+                            @error('agency_id')
+                            <span class="font-bolder" style="color: red">Please choose an Agency.</span>
+                            @enderror
                         </div>
                         <div class="col-md-5 col-sm-12 mt-2">
                             <label>Full Name / <i>Buong Pangalan</i></label>
@@ -47,7 +53,6 @@
                             <label>City / <i>Siyudad</i></label>
                             <input name="city" class="form-control">
                         </div>
-
                         <div class="col-sm-12 mt-2">
                             <label>Provide Below Assistance Needed / <i>Ilagda Ang Inyo Kailangang Tulong</i></label>
                             <textarea class="form-control" name="description" rows="6"></textarea>
