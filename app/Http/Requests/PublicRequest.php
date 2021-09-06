@@ -25,11 +25,12 @@ class PublicRequest extends FormRequest
     {
         return [
             "agency_id" => "required",
+            "email"     => "required|email",
             //            "name"        => "",
             //            "email"       => "email",
             //            "baranggay"   => "",
             //            "city"        => "",
-            //            "description" => "",
+            "description" => "required",
         ];
     }
 }

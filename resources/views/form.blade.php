@@ -44,6 +44,9 @@
                         <div class="col-md-3 col-sm-12 mt-2">
                             <label>E-mail</label>
                             <input type="email" name="email" class="form-control">
+                            @error('email')
+                            <span class="font-bolder" style="color: red">Please provide your E-mail.</span>
+                            @enderror
                         </div>
                         <div class="col-md-5 col-sm-12 mt-2">
                             <label>Baranggay</label>
@@ -56,6 +59,9 @@
                         <div class="col-sm-12 mt-2">
                             <label>Provide Below Assistance Needed / <i>Ilagda Ang Inyo Kailangang Tulong</i></label>
                             <textarea class="form-control" name="description" rows="6"></textarea>
+                            @error('description')
+                            <span class="font-bolder" style="color: red">Please provide details.</span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-12 mt-3">
                             <button id="cb-btn" type="submit" class="btn btn-success btn-block">

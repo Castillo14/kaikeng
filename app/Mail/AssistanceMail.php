@@ -30,8 +30,8 @@ class AssistanceMail extends Mailable
      */
     public function build()
     {
-        $results = HelpRequest::find($this->help_request);
+        $results = HelpRequest::find($this->help_request->id);
 
-        return $this->view('mail.assistance', compact('results'));
+        return $this->subject('CARLO - Assistance Form')->view('mail.assistance', compact('results'));
     }
 }

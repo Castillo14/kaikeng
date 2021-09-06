@@ -31,20 +31,14 @@ class PublicController extends Controller
         ]);
 
         HelpRequest::where('id', $help_request->id)->update([
-            "code" => Factory::create()->randomKey . $help_request->id,
+            "code" => Factory::create()->countryISOAlpha3() . $help_request->id . Factory::create()->countryISOAlpha3(),
         ]);
 
-        //        Mail::send([], [], function ($message) use ($request) {
-        //            $message->to(['iseneres@yahoo.com', 'sab_princes@yahoo.com'])
-        //                    ->from('do-not-reply@kaikenghelp-ph.com')
-        //                    ->subject("KAIKENG HELP! from Website")
-        //                    ->setBody("Fullname: {$request->fullname} <br>
-        //                               Contact No.: {$request->contact_no} <br>
-        //                               Other Contact No.: {$request->contact_no_other}<br>
-        //                               Salaysay.:<br>{$request->salaysay}<br>");
-        //        });
-
-        Mail::to([$help_request->email])->send(new AssistanceMail($help_request));
+        $agency = Agency::where('id', $request->agency_id)->first();
+        Mail::to([$agency->email])
+            ->cc([$help_request->email])
+            ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
+            ->send(new AssistanceMail($help_request));
 
         Alert::success('Success!', 'Form Received!');
 
