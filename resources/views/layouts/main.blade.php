@@ -42,7 +42,7 @@
                 <a href="{{ route('form') }}" class="btn btn-link text-white font-weight-bold">APPLY</a>
             </div>
             <div class="mr-4">
-                <a href="#" class="btn btn-link text-white font-weight-bold">What is Ka-Iking HELPING?</a>
+                <a href="#" class="btn btn-link text-white font-weight-bold">What is CARLO?</a>
             </div>
             <div class="mr-4">
                 <a href="#" class="btn btn-link text-white font-weight-bold">Term Of Use</a>
