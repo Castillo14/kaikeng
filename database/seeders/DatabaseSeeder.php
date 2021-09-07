@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
         $user->remember_token = Str::random(10);
         $user->save();
 
-        Agency::factory()->count(10)->create();
+       // Agency::factory()->count(10)->create();
     }
 }
