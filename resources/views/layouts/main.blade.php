@@ -27,7 +27,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
 </head>
-<body id="page-top">
+<body class="d-flex flex-column">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="navbar-brand js-scroll-trigger d-flex flex-column">
@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-top: -60px !important;">
         <ul class="navbar-nav ml-auto text-white">
             <div class="mr-4">
-                <a href="{{ route('form') }}" class="btn btn-link text-white font-weight-bold">APPLY</a>
+                <a href="{{ route('follow.up') }}" class="btn btn-link text-white font-weight-bold">FOLLOW-UP</a>
             </div>
             <div class="mr-4">
                 <a href="#" class="btn btn-link text-white font-weight-bold">What is CARLO?</a>
@@ -53,7 +53,7 @@
 <!-- Masthead-->
 @yield('content')
 
-<footer>
+<footer class="footer mt-auto">
     <div class="d-flex d-flex pb-2 pt-5">
         <div class="ps-3 text-white d-flex flex-row">
             <i class="fas fa-share-alt fs-1 me-4"></i>
@@ -63,6 +63,7 @@
         <div></div>
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

@@ -52,4 +52,14 @@ class PublicController extends Controller
 
         return view('form', compact('agencies'));
     }
+
+    public function showFollowUp(Request $request)
+    {
+        $results = null;
+        if ($request->has('code')) {
+            $results = HelpRequest::query()->where('code', $request->code)->first()->toArray();
+        }
+
+        return view('followup', compact('results'));
+    }
 }

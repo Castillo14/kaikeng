@@ -6,7 +6,7 @@
     <br>City: {{ $results->city }}
     <br>Description:<br>{{ $results->description }}
 </p>
-<p>Save Your Unique Code:
+<p>Save Your Ticket No.:
     <span style="color: red; text-shadow: rgb(136, 136, 136) -4px -3px 13px; font-size: 20px;">
         {{ $results->code }}
     </span>

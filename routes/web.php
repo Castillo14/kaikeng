@@ -22,6 +22,8 @@ Route::get('/', [PublicController::class, 'pageLanding'])->name('landing');
 Route::get('/form', [PublicController::class, 'pageForm'])->name('form');
 Route::post('/form/send', [PublicController::class, 'sendForm'])->name('form.send');
 
+Route::get('/follow/up', [PublicController::class, 'showFollowUp'])->name('follow.up');
+
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
