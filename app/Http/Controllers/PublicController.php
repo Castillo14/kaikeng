@@ -36,8 +36,8 @@ class PublicController extends Controller
         ]);
 
         $agency = Agency::where('id', $request->agency_id)->first();
-        Mail::to([$agency->email])
-            ->cc([$help_request->email])
+        Mail::to([$help_request->emaill])
+            ->cc([$agency->emai])
             ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
             ->send(new AssistanceMail($help_request));
 

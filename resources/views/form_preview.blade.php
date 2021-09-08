@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-5 col-sm-12 mt-2">
                             <label>Full Name / <i>Buong Pangalan</i></label>
-                            <input name="name" class="form-control" {{ $results->name }}>
+                            <input name="name" class="form-control" value="{{ $results->name }}">
                         </div>
                         <div class="col-md-3 col-sm-12 mt-2">
                             <label>E-mail</label>

@@ -22,10 +22,10 @@ class AgencyFactory extends Factory
     public function definition()
     {
         return [
-            'name'    => $this->faker->company,
-            'email'   => $this->faker->companyEmail,
-            'phone'   => $this->faker->phoneNumber,
-            'address' => $this->faker->address,
+            'name'    => $this->faker->company(),
+            'email'   => $this->faker->companyEmail(),
+            'phone'   => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
         ];
     }
 }

@@ -48,8 +48,12 @@
                     },
                     {data: 'name', name: 'name', title: 'Full Name'},
                     {data: 'agency.name', name: 'agency.name', title: 'Agency'},
-                    {data: 'status', name: 'status', title: 'Status'},
-                    {data: 'created_at', name: 'created_at', title: 'Created at'},
+                    {
+                        data: function (value) {
+                            return value.status + ' ' + value.resolve_date
+                        }, name: 'status', title: 'Status'
+                    },
+                    {data: 'created_at', name: 'created_at', title: 'Date Submitted'},
                 ],
                 drawCallback() {
 
