@@ -47,6 +47,7 @@
                         }, name: 'id', title: 'ID'
                     },
                     {data: 'name', name: 'name', title: 'Full Name'},
+                    {data: 'email', name: 'email', title: 'Requestor\'s E-mail'},
                     {data: 'agency.name', name: 'agency.name', title: 'Agency'},
                     {
                         data: function (value) {
