@@ -55,14 +55,13 @@ class PublicController extends Controller
 
     public function showFollowUp(Request $request)
     {
-        $results = null;
+        $results = 0;
         if ($request->has('code')) {
             $results = HelpRequest::query()->where('code', $request->code)->first();
             if($results) {
                 $results = $results->toArray();
             }
         }
-
         return view('followup', compact('results'));
     }
 }

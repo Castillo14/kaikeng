@@ -23,13 +23,13 @@
                     </form>
                 </div>
                 <div class="col-12"></div>
-                @if(!$results)
+                @if($results === 0)
                     <div class="col-lg-8 mx-auto text-white">
-                        Search to Find Results.
+                        <h2>Search to Find Results.</h2>
                     </div>
-                @elseif(count($results) == 0)
-                    <div class="col-lg-8 mx-auto">
-                        @dump($results)
+                @elseif(!$results)
+                    <div class="col-lg-8 mx-auto text-white">
+                        <h2>No Results Found.</h2>
                     </div>
                 @else
                     <div class="col-lg-4 mx-auto">
