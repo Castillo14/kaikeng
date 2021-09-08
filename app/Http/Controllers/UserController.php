@@ -20,14 +20,13 @@ class UserController extends Controller
 
     public function table()
     {
-        $user = DB::table('users')
-                  ->select([
-                      'users.name',
-                      'users.email',
-                      'users.id',
-                  ]);
+        return DataTables::of(User::all())->setTransformer(function ($value) {
+            $data                 = collect($value)->toArray();
+            $data['users_show']   = route('users.show', ['id' => $data['id']]);
+            $data['role_display'] = $data['role'] == 1 ? 'Admin' : 'Agency';
 
-        return DataTables::of($user)->make(true);
+            return $data;
+        })->make(true);
     }
 
     public function create()
@@ -38,13 +37,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = DB::table('users')
-                  ->select([
-                      'users.name',
-                      'users.email',
-                      'users.id',
-                  ])
                   ->where('users.id', $id)
-                  ->get()[0];
+                  ->first();
 
         return view('users_edit', compact('user'));
     }
@@ -55,6 +49,7 @@ class UserController extends Controller
         $user           = new User();
         $user->name     = $data['name'];
         $user->email    = $data['email'];
+        $user->role     = $data['role'];
         $user->password = Hash::make($data['password']);
         $user->save();
 
@@ -69,6 +64,7 @@ class UserController extends Controller
         $user        = User::find($data['id']);
         $user->name  = $data['name'];
         $user->email = $data['email'];
+        $user->role  = $data['role'];
 
         if ($data['password'] != 'fakepassword') {
             $user->password = Hash::make($data['password']);

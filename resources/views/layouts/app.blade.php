@@ -21,12 +21,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('theme/purpleadmin/assets/vendors/css/vendor.bundle.base.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/DataTables/datatables.min.css') }}">
+    <script type="text/javascript" src="{{ asset('vendor/DataTables/datatables.min.js') }}"></script>
+
 </head>
 <body>
 <div class="container-scroller">
@@ -53,16 +58,11 @@
     <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
-<!-- plugins:js -->
-<script src="{{ asset('theme/purpleadmin/assets/vendors/js/vendor.bundle.base.js') }}"></script>
 <script src="{{ asset('theme/purpleadmin/assets/js/off-canvas.js') }}"></script>
 <script src="{{ asset('theme/purpleadmin/assets/js/hoverable-collapse.js') }}"></script>
 <script src="{{ asset('theme/purpleadmin/assets/js/misc.js') }}"></script>
 <script src="{{ asset('theme/purpleadmin/assets/js/file-upload.js') }}"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"
-        defer></script>
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-<script src="{{ asset('js/app.js') }}"></script>
 @yield('scripts')
 </body>
 </html>

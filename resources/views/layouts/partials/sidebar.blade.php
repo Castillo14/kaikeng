@@ -18,5 +18,11 @@
                 <i class="mdi mdi-account menu-icon"></i>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('delegations') }}">
+                <span class="menu-title">Delegations</span>
+                <i class="mdi mdi-arrow-all menu-icon"></i>
+            </a>
+        </li>
     </ul>
 </nav>

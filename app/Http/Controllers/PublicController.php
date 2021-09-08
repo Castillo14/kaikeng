@@ -28,6 +28,7 @@ class PublicController extends Controller
             "baranggay"   => $request->baranggay,
             "city"        => $request->city,
             "description" => $request->description,
+            "status"      => "unread",
         ]);
 
         HelpRequest::where('id', $help_request->id)->update([

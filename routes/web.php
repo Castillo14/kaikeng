@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\AgencyController;
+use App\Http\Controllers\DelegationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,28 +18,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PublicController::class, 'pageLanding'])->name('landing');
-Route::get('/form', [\App\Http\Controllers\PublicController::class, 'pageForm'])->name('form');
-Route::post('/form/send', [\App\Http\Controllers\PublicController::class, 'sendForm'])->name('form.send');
+Route::get('/', [PublicController::class, 'pageLanding'])->name('landing');
+Route::get('/form', [PublicController::class, 'pageForm'])->name('form');
+Route::post('/form/send', [PublicController::class, 'sendForm'])->name('form.send');
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::post('/home/table', [App\Http\Controllers\HomeController::class, 'table'])->name('home.table');
-    Route::get('/home/preview/{id}', [App\Http\Controllers\HomeController::class, 'preview'])->name('home.preview');
+    Route::prefix('home')->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::post('/table', [HomeController::class, 'table'])->name('home.table');
+        Route::get('/preview/{id}', [HomeController::class, 'preview'])->name('home.preview');
+    });
 
-    Route::get('/agencies', [App\Http\Controllers\AgencyController::class, 'index'])->name('agencies');
-    Route::post('/agency/store', [App\Http\Controllers\AgencyController::class, 'store'])->name('agency.store');
-    Route::get('/a/d/{id}', [App\Http\Controllers\AgencyController::class, 'destroy'])->name('agency.destroy');
+    Route::prefix('delegations')->group(function () {
+        Route::get('/', [DelegationController::class, 'index'])->name('delegations');
+        Route::post('/table', [DelegationController::class, 'table'])->name('delegations.table');
+        Route::get('/create', [DelegationController::class, 'create'])->name('delegations.create');
+        Route::post('/store', [DelegationController::class, 'store'])->name('delegations.store');
+    });
 
-    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
-    Route::post('/users/table', [App\Http\Controllers\UserController::class, 'table'])->name('users.table');
-    Route::post('/users/register', [App\Http\Controllers\UserController::class, 'register'])->name('users.register');
-    Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
-    Route::get('/users/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
-    Route::post('/users/update', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
-    Route::get('/users/destroy/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+    Route::prefix('agencies')->group(function () {
+        Route::get('/', [AgencyController::class, 'index'])->name('agencies');
+        Route::post('/store', [AgencyController::class, 'store'])->name('agency.store');
+        Route::get('/d/{id}', [AgencyController::class, 'destroy'])->name('agency.destroy');
+    });
+
+    Route::prefix('user')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users');
+        Route::get('/table', [UserController::class, 'table'])->name('users.table');
+        Route::post('/register', [UserController::class, 'register'])->name('users.register');
+        Route::get('/create', [UserController::class, 'create'])->name('users.create');
+        Route::get('/show/{id}', [UserController::class, 'show'])->name('users.show');
+        Route::post('/update', [UserController::class, 'update'])->name('users.update');
+        Route::get('/destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
 });

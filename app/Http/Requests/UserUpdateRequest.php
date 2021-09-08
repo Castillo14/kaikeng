@@ -27,8 +27,6 @@ class UserUpdateRequest extends FormRequest
             'name'     => 'required|string',
             'email'    => 'required|string|email|exists:users',
             'password' => 'required|string|min:8|confirmed',
-            'province' => 'required',
-            'position' => 'required',
         ];
     }
 }

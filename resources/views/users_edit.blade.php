@@ -36,6 +36,20 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="name">{{ __('Roles') }}</label>
+                                    <select id="role"
+                                            class="form-control @error('role') is-invalid @enderror" name="role"
+                                            value="{{ old('role') }}" required autocomplete="role">
+                                        <option value="1" @if($user->role == 1) selected @endif>Admin</option>
+                                        <option value="2" @if($user->role == 2) selected @endif>Agency</option>
+                                    </select>
+                                    @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group row">
                                     <label for="password">{{ __('Password') }}</label>
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror"

@@ -48,6 +48,7 @@
                     },
                     {data: 'name', name: 'name', title: 'Full Name'},
                     {data: 'agency.name', name: 'agency.name', title: 'Agency'},
+                    {data: 'status', name: 'status', title: 'Status'},
                     {data: 'created_at', name: 'created_at', title: 'Created at'},
                 ],
                 drawCallback() {
