@@ -57,7 +57,10 @@ class PublicController extends Controller
     {
         $results = null;
         if ($request->has('code')) {
-            $results = HelpRequest::query()->where('code', $request->code)->first()->toArray();
+            $results = HelpRequest::query()->where('code', $request->code)->first();
+            if($results) {
+                $results = $results->toArray();
+            }
         }
 
         return view('followup', compact('results'));
