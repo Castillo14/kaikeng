@@ -18,6 +18,7 @@ class AgencyController extends Controller
     {
         Agency::updateOrCreate(
             ['id' => $request->id], [
+            "name"   => $request->name,
             "email"   => $request->email,
             "phone"   => $request->phone,
             "address" => $request->address,
