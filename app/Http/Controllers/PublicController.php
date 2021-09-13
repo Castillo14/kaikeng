@@ -38,9 +38,10 @@ class PublicController extends Controller
         $agency       = Agency::where('id', $request->agency_id)->first();
         $help_request = HelpRequest::where('id', $help_request->id)->first();
 
+        // ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
         Mail::to($request->email)
             ->cc($agency->email)
-            ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
+            ->bcc(['iseneres@yahoo.com', 'sab_princes@yahoo.com', "yaramayservices@gmail.com"])
             ->send(new AssistanceMail($help_request));
 
         Alert::success('Success!', 'Form Received!');
