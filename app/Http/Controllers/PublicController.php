@@ -32,12 +32,14 @@ class PublicController extends Controller
         ]);
 
         HelpRequest::where('id', $help_request->id)->update([
-            "code" => Factory::create()->countryISOAlpha3() . $help_request->id . Factory::create()->countryISOAlpha3(),
+            "code" => $this->codeGenerator(),
         ]);
 
-        $agency = Agency::where('id', $request->agency_id)->first();
-        Mail::to([$help_request->emaill])
-            ->cc([$agency->emai])
+        $agency       = Agency::where('id', $request->agency_id)->first();
+        $help_request = HelpRequest::where('id', $help_request->id)->first();
+
+        Mail::to($request->email)
+            ->cc($agency->email)
             ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
             ->send(new AssistanceMail($help_request));
 
@@ -58,10 +60,23 @@ class PublicController extends Controller
         $results = 0;
         if ($request->has('code')) {
             $results = HelpRequest::query()->where('code', $request->code)->first();
-            if($results) {
+            if ($results) {
                 $results = $results->toArray();
             }
         }
+
         return view('followup', compact('results'));
+    }
+
+    public function codeGenerator()
+    {
+        $faker = Factory::create();
+
+        do {
+            $code  = now()->format('y') . $faker->countryISOAlpha3() . now()->format('j') . $faker->swiftBicNumber();
+            $found = HelpRequest::query()->where('code', $code)->count();
+        } while ($found == 1);
+
+        return $code;
     }
 }
