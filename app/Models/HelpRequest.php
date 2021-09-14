@@ -21,6 +21,7 @@ class HelpRequest extends Model
         'contact',
         'gender',
         'status',
+        'birthdate',
     ];
 
     protected $with = ['agency'];
