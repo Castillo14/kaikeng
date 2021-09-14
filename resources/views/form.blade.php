@@ -66,7 +66,7 @@
                                 <button id="cb-btn" type="submit" class="btn btn-success btn-block">
                                     Submit
                                 </button>
-                                <a href="{{ route('home') }}" class="btn btn-secondary text-white"
+                                <a href="{{ route('landing') }}" class="btn btn-secondary text-white"
                                    type="button">Back</a>
                             </div>
                         </div>
