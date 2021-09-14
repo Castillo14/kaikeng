@@ -33,6 +33,14 @@
                             <input name="name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-12 mt-2">
+                            <label>Gender / <i>Kasarian</i></label>
+                            <select name="gender" class="form-select">
+                                <option class="" selected> -- Select Options --</option>
+                                <option class="male">Male</option>
+                                <option class="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-12 mt-2">
                             <label>E-mail</label>
                             <input type="email" name="email" class="form-control">
                             @error('email')

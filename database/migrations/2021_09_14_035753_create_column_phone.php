@@ -14,7 +14,8 @@ class CreateColumnPhone extends Migration
     public function up()
     {
         Schema::table('help_requests', function (Blueprint $table) {
-            $table->string('contact');
+            $table->string('contact')->nullable();
+            $table->string('gender')->nullable();
         });
     }
 
