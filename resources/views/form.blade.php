@@ -40,7 +40,7 @@
                                 <option class="female">Female</option>
                             </select>
                         </div>
-                        <div class="col-md-5 col-sm-12 mt-2">
+                        <div class="col-md-3 col-sm-12 mt-2">
                             <label>Birth Date / <i>Araw ng kapanganakan</i></label>
                             <input type="date" name="birthdate" class="form-control">
                         </div>
