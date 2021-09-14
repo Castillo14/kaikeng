@@ -1,27 +1,18 @@
 @extends('layouts.main')
 
 @section('content')
-    <style>
-        label {
-            color: white;
-        }
-
-        form div {
-            text-align: left;
-        }
-    </style>
     <!-- About-->
-    <section class="about-section text-center pt-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-white mb-4 text-2xl">C.A.R.L.O. Online Form</h2>
-                    <p class="text-white font-bolder">
+    <section class="about-section text-center pt-5 mt-5 mb-5">
+        <div class="container px-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4 text-2xl">C.A.R.L.O. Online Form</h2>
+                    <p class="font-bolder">
                         &quot;The purpose of CARLO is to have one common Customer Relations Management (CRM) system for
                         government that is easy for citizens to remember or to use.&quot;
                     </p>
                 </div>
-                <div class="col-lg-12 mx-auto">
+                <div class="col-lg-12">
                     <form class="row mb-5" method="POST" action="{{ route('form.send') }}"
                           enctype="multipart/form-data">
                         @csrf
@@ -48,6 +39,13 @@
                             <span class="font-bolder" style="color: red">Please provide your E-mail.</span>
                             @enderror
                         </div>
+                        <div class="col-md-3 col-sm-12 mt-2">
+                            <label>Contact / Telepono</label>
+                            <input type="text" name="contact" class="form-control">
+                            @error('contact')
+                            <span class="font-bolder" style="color: red">Please provide your Contact.</span>
+                            @enderror
+                        </div>
                         <div class="col-md-5 col-sm-12 mt-2">
                             <label>Baranggay</label>
                             <input name="baranggay" class="form-control">
@@ -64,9 +62,13 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-12 mt-3">
-                            <button id="cb-btn" type="submit" class="btn btn-success btn-block">
-                                Submit<br><i>Ipadala</i>
-                            </button>
+                            <div class="d-grid gap-2">
+                                <button id="cb-btn" type="submit" class="btn btn-success btn-block">
+                                    Submit
+                                </button>
+                                <a href="{{ route('home') }}" class="btn btn-secondary text-white"
+                                   type="button">Back</a>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -18,6 +18,7 @@ class HelpRequest extends Model
         'city',
         'description',
         'code',
+        'contact',
         'status',
     ];
 

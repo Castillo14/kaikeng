@@ -28,6 +28,7 @@ class PublicController extends Controller
             "baranggay"   => $request->baranggay,
             "city"        => $request->city,
             "description" => $request->description,
+            "contact"     => $request->contact,
             "status"      => "unread",
         ]);
 

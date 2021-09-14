@@ -1,28 +1,31 @@
 @extends('layouts.main')
 
 @section('content')
-    <header class="masthead">
-        <div class="container d-flex vh-100 justify-content-center">
+    <!-- Header-->
+    <header class="text-center mt-5 pt-3">
+        <div class="container px-5">
             <div class="d-flex flex-column">
-                <div class="headline d-flex flex-column">
-                    <h1 class="part-1">Citizens Assistance Recording and </h1>
-                    <h1 class="part-2"> Listing Organization</h1>
+                <div class="mt-4">
+                    <img src="{{ asset('images/CARLO_logo.png') }}" width="200px" class="img-fluid mt-3">
                 </div>
-                <br>
-                <!-- <label class="sub-headline text-white text-center">Helping by Ka Iking</label> -->
-                <label class="sub-headline-1 text-center lh-lg">
-                    Kailangan mo tulong. Pindutin mo ako. Nandyan ako sa tabi mo.
-                    <br>
-                    Hindi ka nag iisa.
-                </label>
-                <label class="sub-headline-2 text-center mt-2 lh-lg">
-                    Masapul mo't Saranay, pisilin nak, adda ak lng abay mo,
-                    <br>
-                    dika't agmaymaysa.
-                </label>
-                <div class="d-flex justify-content-center pindutin">
-                    <a class="btn btn-light rounded-pill fw-bolder py-3 px-5 fs-6 shadow" href="{{ route('form') }}">
-                        Pindutin Para Mag APPLY</a>
+                <div>
+                    <span class="sub-text">CITIZEN'S ASSISTANCE RECORDING AND LISTING ORGANIZATION</span>
+                </div>
+                <div class="mt-4 moto-text">
+                    <div class="fs-1">SERBISYONG MAS PINAGYAMAN</div>
+                    <div class="fs-1">MABILIS AT MAASAHAN</div>
+                </div>
+                <div class="mt-4">
+                    <div class="fs-3 fw-bolder">KAAGAPAY SA PAGBABAGO</div>
+                    <div class="fs-3 fw-bolder">SERBISYONG PARA SA
+                        <span class="fs-2"
+                              style="font-weight: 900">PILIPINO</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 d-grid gap-2 mx-auto">
+                     <a class="btn btn-primary btn-lg rounded-3 mt-5" href="{{ route('form') }}">Magpatuloy</a>
+                    </div>
                 </div>
             </div>
         </div>

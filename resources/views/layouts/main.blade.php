@@ -7,73 +7,125 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url"                content="{{ route('landing') }}" />
-    <meta property="og:type"               content="Foundation" />
-    <meta property="og:title"              content="{{ config('app.name', 'Laravel') }}" />
-    <meta property="og:description"        content="" />
-    <meta property="og:image"              content="{{ asset('images/CARLO.png') }}" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"></script>
+    <meta property="og:url" content="{{ route('landing') }}"/>
+    <meta property="og:type" content="Foundation"/>
+    <meta property="og:title" content="{{ config('app.name', 'Laravel') }}"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="{{ asset('images/CARLO.png') }}"/>
 
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+          rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ asset('theme/wonder/css/styles.css') }}" rel="stylesheet"/>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ asset('theme/wonder/js/scripts.js') }}"></script>
 </head>
-<body class="d-flex flex-column">
+<body id="page-top">
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="navbar-brand js-scroll-trigger d-flex flex-column">
-        <span class="text-white">Visit and like us on</span>
-        <div class="text-center">
-            <img src="{{ asset('img/facebook.png') }}" class="img-fluid" width="40%">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand d-flex flex-row"
+           href="https://www.facebook.com/CARLO-210247167661296/?ref=pages_you_manage"
+           target="_blank">
+            <i class="fab fa-facebook fa-2x"></i>
+            <div class="align-self-center ms-3">Visit and Like Us</div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal"
+                                        data-bs-target="#mdl-whatIsCARLO">What is CARLO?</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal"
+                                        data-bs-target="#mdl-tos">Terms Of Use</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-top: -60px !important;">
-        <ul class="navbar-nav ml-auto text-white">
-            <div class="mr-4">
-                <a href="{{ route('follow.up') }}" class="btn btn-link text-white font-weight-bold">FOLLOW-UP</a>
-            </div>
-            <div class="mr-4">
-                <a href="#" class="btn btn-link text-white font-weight-bold">What is CARLO?</a>
-            </div>
-            <div class="mr-4">
-                <a href="#" class="btn btn-link text-white font-weight-bold">Term Of Use</a>
-            </div>
-        </ul>
     </div>
 </nav>
-<!-- Masthead-->
-@yield('content')
 
-<footer class="footer mt-auto">
-    <div class="d-flex d-flex pb-2 pt-5">
-        <div class="ps-3 text-white d-flex flex-row">
-            <i class="fas fa-share-alt fs-1 me-4"></i>
-            <span class="align-self-center">Share Ka Iking HELPING</span>
+<!-- What is Carlo -->
+<div class="modal fade" id="mdl-whatIsCARLO" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex flex-column">
+                    <div class="text-center mb-2">
+                        <h5 class="modal-title" id="staticBackdropLabel">What is Carlo?</h5>
+                    </div>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra ante ut pharetra condimentum. Sed mauris mauris, feugiat vel quam eget, finibus maximus tortor. Sed a lectus maximus ante aliquam finibus. In sed tellus sed lectus fringilla egestas. Donec a nisi neque. Vivamus tincidunt placerat massa, in bibendum eros elementum dapibus. Nullam lacinia mattis convallis. In vitae lorem tortor. Vestibulum feugiat vehicula ante id tempus. Aliquam quis elit nec diam sollicitudin iaculis. Praesent at hendrerit ante.
+
+                            Aliquam euismod pharetra neque. Pellentesque congue porta feugiat. Duis laoreet ut enim ut tincidunt. Etiam eget malesuada sapien. Sed libero leo, ultrices quis tempor ut, venenatis in erat. Curabitur vitae ligula molestie, feugiat metus at, fermentum tellus. Etiam et ex a magna molestie facilisis ac vitae mauris. Sed sagittis viverra nibh, nec lacinia ipsum blandit vitae. In tellus lorem, auctor vestibulum nisl vestibulum, sollicitudin dignissim erat.
+
+                            Donec ultrices laoreet velit id auctor. Nullam hendrerit, nisi ut elementum facilisis, diam mi suscipit magna, a auctor nulla leo at leo. Vestibulum quis iaculis elit. Curabitur tempor aliquam nibh imperdiet efficitur. In id molestie ligula. Nam et dolor sed ante laoreet finibus. Aliquam ultricies odio vitae aliquam egestas. Nam sit amet ex feugiat, aliquet quam ut, blandit risus.
+
+                            Vivamus hendrerit, ante id accumsan vestibulum, eros turpis accumsan quam, tincidunt euismod nulla leo ut magna. Ut sit amet viverra eros. Nulla tincidunt sollicitudin lectus, ac luctus lorem pulvinar vel. Suspendisse venenatis tellus eu pulvinar feugiat. In porttitor dictum congue. In condimentum risus ut arcu facilisis euismod. Donec quis laoreet neque, vel rutrum metus.
+
+                            Nam molestie mollis dui ac dignissim. Phasellus varius dapibus vestibulum. In ornare nisi et rhoncus volutpat. Aliquam quam ante, vestibulum at neque sit amet, mattis hendrerit mauris. Integer rutrum sollicitudin metus nec vestibulum. Aenean eget eleifend nulla. Vestibulum viverra tellus eget feugiat gravida.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-white me-4" style="margin-left: 27%;">Copyright@ Yaramay 2021</div>
-        <div></div>
+    </div>
+</div>
+
+<!-- What is Carlo -->
+<div class="modal fade" id="mdl-tos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex flex-column">
+                    <div class="text-center mb-2">
+                        <h5 class="modal-title" id="staticBackdropLabel">Terms of Use</h5>
+                    </div>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra ante ut pharetra condimentum. Sed mauris mauris, feugiat vel quam eget, finibus maximus tortor. Sed a lectus maximus ante aliquam finibus. In sed tellus sed lectus fringilla egestas. Donec a nisi neque. Vivamus tincidunt placerat massa, in bibendum eros elementum dapibus. Nullam lacinia mattis convallis. In vitae lorem tortor. Vestibulum feugiat vehicula ante id tempus. Aliquam quis elit nec diam sollicitudin iaculis. Praesent at hendrerit ante.
+
+                            Aliquam euismod pharetra neque. Pellentesque congue porta feugiat. Duis laoreet ut enim ut tincidunt. Etiam eget malesuada sapien. Sed libero leo, ultrices quis tempor ut, venenatis in erat. Curabitur vitae ligula molestie, feugiat metus at, fermentum tellus. Etiam et ex a magna molestie facilisis ac vitae mauris. Sed sagittis viverra nibh, nec lacinia ipsum blandit vitae. In tellus lorem, auctor vestibulum nisl vestibulum, sollicitudin dignissim erat.
+
+                            Donec ultrices laoreet velit id auctor. Nullam hendrerit, nisi ut elementum facilisis, diam mi suscipit magna, a auctor nulla leo at leo. Vestibulum quis iaculis elit. Curabitur tempor aliquam nibh imperdiet efficitur. In id molestie ligula. Nam et dolor sed ante laoreet finibus. Aliquam ultricies odio vitae aliquam egestas. Nam sit amet ex feugiat, aliquet quam ut, blandit risus.
+
+                            Vivamus hendrerit, ante id accumsan vestibulum, eros turpis accumsan quam, tincidunt euismod nulla leo ut magna. Ut sit amet viverra eros. Nulla tincidunt sollicitudin lectus, ac luctus lorem pulvinar vel. Suspendisse venenatis tellus eu pulvinar feugiat. In porttitor dictum congue. In condimentum risus ut arcu facilisis euismod. Donec quis laoreet neque, vel rutrum metus.
+
+                            Nam molestie mollis dui ac dignissim. Phasellus varius dapibus vestibulum. In ornare nisi et rhoncus volutpat. Aliquam quam ante, vestibulum at neque sit amet, mattis hendrerit mauris. Integer rutrum sollicitudin metus nec vestibulum. Aenean eget eleifend nulla. Vestibulum viverra tellus eget feugiat gravida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@yield('content')
+<!-- Footer-->
+<footer class="py-3 bg-white fixed-bottom">
+    <div class="container px-3">
+        <div class="m-0 small d-flex flex-row">
+            <i class="fas fa-share-alt fa-2x"></i>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('landing') }}"
+               class="btn btn-link my-auto ms-1">
+                SHARE ka Iking HELPING</a>
+        </div>
     </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 @yield('scripts')
