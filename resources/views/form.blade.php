@@ -1,6 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
+    <div class="content-loading" hidden="hidden">
+        <div class="loading">
+            <p>Sending...</p>
+            <span></span>
+        </div>
+    </div>
     <!-- About-->
     <section class="about-section text-center pt-5 mt-5 mb-5">
         <div class="container px-5">
@@ -108,5 +114,13 @@
 @endsection
 
 @section('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(function () {
+            $('#cb-btn').on('click', function () {
+                $('.content-loading').removeAttr('hidden');
+            });
+        });
+    </script>
 @endsection

@@ -22,6 +22,7 @@
           rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('theme/wonder/css/styles.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/style-scss.scss') }}" rel="stylesheet"/>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -167,6 +168,7 @@
         </div>
     </div>
 </div>
+
 @yield('content')
 <!-- Footer-->
 <footer class="py-3 bg-white fixed-bottom">
