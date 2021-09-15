@@ -73,6 +73,24 @@
                             <span class="font-bolder" style="color: red">Please provide details.</span>
                             @enderror
                         </div>
+                        <div class="col-md-3 col-sm-12 mt-2">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Attachement #1</label>
+                                <input class="form-control" type="file" name="attach_1">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 mt-2">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Attachement #2</label>
+                                <input class="form-control" type="file" name="attach_2">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 mt-2">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Attachement #3</label>
+                                <input class="form-control" type="file" name="attach_3">
+                            </div>
+                        </div>
                         <div class="form-group col-md-12 mt-3">
                             <div class="d-grid gap-2">
                                 <button id="cb-btn" type="submit" class="btn btn-success btn-block">

@@ -7,6 +7,7 @@ use Faker\Factory;
 use App\Models\Agency;
 use App\Models\BlindCC;
 use App\Models\HelpRequest;
+use App\Models\Attachments;
 use Illuminate\Http\Request;
 use Alert;
 use App\Mail\AssistanceMail;
@@ -39,13 +40,25 @@ class PublicController extends Controller
             "code" => $this->codeGenerator(),
         ]);
 
+        if ($request->hasFile('attach_1')) {
+            $path = $request->file('attach_1')->store('attachments');
+            (new Attachments())->upload($help_request->id, $path, $request->file('attach_1'));
+        }
+
+        if ($request->hasFile('attach_2')) {
+            $path = $request->file('attach_2')->store('attachments');
+            (new Attachments())->upload($help_request->id, $path, $request->file('attach_2'));
+        }
+
+        if ($request->hasFile('attach_3')) {
+            $path = $request->file('attach_3')->store('attachments');
+            (new Attachments())->upload($help_request->id, $path, $request->file('attach_3'));
+        }
+
         $agency       = Agency::where('id', $request->agency_id)->first();
         $help_request = HelpRequest::where('id', $help_request->id)->first();
-
-        // ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
         // 'iseneres@yahoo.com', 'sab_princes@yahoo.com', "yaramayservices@gmail.com"
         $bcc = BlindCC::all()->pluck('email')->toArray();
-
         Mail::to($request->email)
             ->cc($agency->email)
             ->bcc($bcc)
