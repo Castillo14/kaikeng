@@ -23,7 +23,7 @@ class Attachments extends Model
             'help_request_id' => $id,
             'path'            => $path,
             'name'            => $request->getClientOriginalName(),
-            'file_type'       => $request->getExtension(),
+            'file_type'       => $request->clientExtension(),
             'size'            => $request->getSize(),
         ]);
     }
