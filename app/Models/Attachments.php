@@ -22,8 +22,8 @@ class Attachments extends Model
         $this::create([
             'help_request_id' => $id,
             'path'            => $path,
-            'name'            => $request->getFilename(),
-            'file_type'       => $request->getType(),
+            'name'            => $request->getClientOriginalName(),
+            'file_type'       => $request->getExtension(),
             'size'            => $request->getSize(),
         ]);
     }
