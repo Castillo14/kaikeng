@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AgencyController;
+use App\Http\Controllers\BlindCCController;
 use App\Http\Controllers\DelegationController;
 
 /*
@@ -52,5 +53,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/table', [DelegationController::class, 'table'])->name('delegations.table');
         Route::get('/create', [DelegationController::class, 'create'])->name('delegations.create');
         Route::post('/store', [DelegationController::class, 'store'])->name('delegations.store');
+    });
+
+    Route::prefix('bcc')->group(function () {
+        Route::get('/', [BlindCCController::class, 'index'])->name('bcc')->middleware(['can:admin']);
+        Route::post('/store', [BlindCCController::class, 'store'])->name('bcc.store');
+        Route::get('/d/{id}', [BlindCCController::class, 'destroy'])->name('bcc.destroy');
     });
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Faker\Factory;
 use App\Models\Agency;
+use App\Models\BlindCC;
 use App\Models\HelpRequest;
 use Illuminate\Http\Request;
 use Alert;
@@ -42,9 +43,12 @@ class PublicController extends Controller
         $help_request = HelpRequest::where('id', $help_request->id)->first();
 
         // ->bcc(["renier.trenuela@gmail.com", "yaramayservices@gmail.com"])
+        // 'iseneres@yahoo.com', 'sab_princes@yahoo.com', "yaramayservices@gmail.com"
+        $bcc = BlindCC::all()->pluck('email')->toArray();
+
         Mail::to($request->email)
             ->cc($agency->email)
-            ->bcc(['iseneres@yahoo.com', 'sab_princes@yahoo.com', "yaramayservices@gmail.com"])
+            ->bcc($bcc)
             ->send(new AssistanceMail($help_request));
 
         Alert::success('Success!', 'Form Received!');

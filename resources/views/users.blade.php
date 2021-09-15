@@ -8,9 +8,13 @@
                     <div class="card-body">
                         <h4 class="card-title">Accounts</h4>
                         <p class="card-description"> Registered Users </p>
-                        <p class="card-description">
-                            <a href="{{ route('users.create') }}" class="btn btn-success">Create Account</a>
-                        </p>
+                        <div class="card-description">
+                            <div class="d-flex flex-row">
+                                <a href="{{ route('users.create') }}" class="btn btn-success">Create Account</a>
+                                <a href="{{ route('bcc') }}" class="btn btn-info ml-2">BCC Emails</a>
+                            </div>
+
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <table id="tbl-users" class="table table-bordered display nowrap"
