@@ -19,6 +19,9 @@
                             <button class="btn btn-primary" type="submit">
                                 <i class="fas fa-search"></i> Search
                             </button>
+                            <a href="{{ route('landing') }}" class="btn btn-secondary" type="submit">
+                                <i class="fas fa-reply"></i> Back
+                            </a>
                         </div>
                     </form>
                 </div>
