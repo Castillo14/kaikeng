@@ -50,7 +50,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#mdl-tos">
-                        Terms Of Use
+                        Terms Of Uses
                     </a>
                 </li>
                 <li class="nav-item">
@@ -171,16 +171,16 @@
 
 @yield('content')
 <!-- Footer-->
-<footer class="py-3 bg-white fixed-bottom">
-    <div class="container px-3">
-        <div class="m-0 small d-flex flex-row">
-            <i class="fas fa-share-alt fa-2x"></i>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('landing') }}"
-               class="btn btn-link my-auto ms-1">
-                SHARE ka Iking HELPING</a>
-        </div>
-    </div>
-</footer>
+{{--<footer class="py-3 bg-white fixed-bottom">--}}
+{{--    <div class="container px-3">--}}
+{{--        <div class="m-0 small d-flex flex-row">--}}
+{{--            <i class="fas fa-share-alt fa-2x"></i>--}}
+{{--            <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('landing') }}"--}}
+{{--               class="btn btn-link my-auto ms-1">--}}
+{{--                SHARE ka Iking HELPING</a>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</footer>--}}
 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 @yield('scripts')
